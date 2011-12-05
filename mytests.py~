@@ -1,0 +1,18 @@
+import lxml.html
+import urllib, pprint
+
+url = 'http://www.pgguest.com/pgguest/default.aspx'
+
+root = lxml.html.parse(url).getroot()
+
+lefttab = root.xpath('//table[@id="tabLink"]')
+
+print lefttab
+
+
+
+for asd in lefttab[0]:
+    #import pdb;pdb.set_trace()
+    pprint.pprint(asd[0][0][0].values()[0])
+
+
